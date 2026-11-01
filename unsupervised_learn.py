@@ -28,10 +28,12 @@ print("\nCluster Centers:")
 print(centers)
 
 # Plot clusters
-plt.scatter(X[:, 0], X[:, 1], c=labels)
-plt.scatter(centers[:, 0], centers[:, 1],marker='X', s=200)
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', edgecolor='k')
+plt.scatter(centers[:, 0], centers[:, 1], marker='X', s=200, c='red', label='Centroids')
 
 plt.title("K-Means Clustering")
 plt.xlabel("Feature 1")
 plt.ylabel("Feature 2")
+plt.legend()
+plt.grid(True)
 plt.show()
