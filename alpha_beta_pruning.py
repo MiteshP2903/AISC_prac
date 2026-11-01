@@ -21,21 +21,21 @@ def minimax(depth, node_index, is_maximizing, values, alpha, beta):
     else:
         best_score = MAX_SCORE
 
-        # Check both children (left and right)[cite: 2]
+        # Check both children (left and right)
         for i in range(2):
             score = minimax(depth + 1, node_index * 2 + i, True, values, alpha, beta)
             best_score = min(best_score, score)
             beta = min(beta, best_score)
 
-            # Alpha-Beta Pruning: cut off search if beta <= alpha[cite: 2]
+            # Alpha-Beta Pruning: cut off search if beta <= alpha
             if beta <= alpha:
                 break
         return best_score
 
 
-# Driver Code[cite: 2]
+# Driver Code
 if __name__ == "__main__":
-    leaf_values = [3, 5, 6, 9, 1, 2, 0, -1][cite: 2]
+    leaf_values = [3, 5, 6, 9, 1, 2, 0, -1]
 
     optimal_value = minimax(
         depth=0,
@@ -44,6 +44,6 @@ if __name__ == "__main__":
         values=leaf_values,
         alpha=MIN_SCORE,
         beta=MAX_SCORE
-    )[cite: 2]
+    )
 
-    print("The optimal value is:", optimal_value)[cite: 2]
+    print("The optimal value is:", optimal_value)
