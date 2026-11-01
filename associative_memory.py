@@ -23,18 +23,14 @@ for i in range(len(X)):
 print("Weight Matrix:")
 print(W)
 
-# Test input pattern
 test_input = np.array([1, -1, 1, -1])
 
-# Calculate net input
 net_input = np.dot(test_input, W)
 
 print("\nNet Input:")
 print(net_input)
 
-# Bipolar activation function
 recalled_output = np.where(net_input >= 0, 1, -1)
 
-# Display recalled output
 print("\nRecalled Output Pattern:")
 print(recalled_output)
