@@ -35,7 +35,7 @@ def minimax(depth, node_index, is_maximizing, values, alpha, beta):
 
 # Driver Code
 if __name__ == "__main__":
-    leaf_values = [3, 5, 6, 9, 1, 2, 0, -1]
+    leaf_values = [9, 5, 11, 9, 0, 2, 0, -1]
 
     optimal_value = minimax(
         depth=0,
