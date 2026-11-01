@@ -33,7 +33,7 @@ def fuzzy_controller(temp):
     warm_value = warm(temp)
     hot_value = hot(temp)
 
-    # Fan speed values
+    # Fan speed values (Singletons)
     low_speed = 20
     medium_speed = 50
     high_speed = 100
@@ -49,7 +49,7 @@ def fuzzy_controller(temp):
     return cold_value, warm_value, hot_value, fan_speed
 
 
-# User Input
+# User Input (or test with a fixed value like temperature = 24)
 temperature = float(input("Enter temperature (°C): "))
 cold_value, warm_value, hot_value, fan_speed = fuzzy_controller(temperature)
 
