@@ -19,7 +19,7 @@ def water_jug(cap1, cap2, target):
             (cap1, jug2, "Jug1 is full"),
             (jug1, cap2, "Jug2 is full"),
             (0, jug2, "Jug1 is empty"),
-            (jug1, 0, "Jug2 is empty"),  # Fixed the '1' to '0' here
+            (jug1, 0, "Jug2 is empty"),
             (jug1 - min(jug1, cap2 - jug2), jug2 + min(jug1, cap2 - jug2), "Pour 1->2"),
             (jug1 + min(jug2, cap1 - jug1), jug2 - min(jug2, cap1 - jug1), "Pour 2->1")
         ]
@@ -27,10 +27,8 @@ def water_jug(cap1, cap2, target):
         for next_jug1, next_jug2, actions in transitions:
             if (next_jug1, next_jug2) not in visited:
                 next_path = path + [((jug1, jug2), actions)]
-                # FIXED: Added extra parentheses so it's only ONE argument
                 queue.append((next_jug1, next_jug2, next_path))
 
-    # FIXED: Unindented so it only triggers if the whole loop finishes with no winner
     return "No solution found"
 
 
