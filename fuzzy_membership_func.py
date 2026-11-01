@@ -9,7 +9,6 @@ def custom_trimf(x, a, b, c):
     """
     a: left foot, b: peak, c: right foot
     """
-    # Math: max(min((x-a)/(b-a), (c-x)/(c-b)), 0)
     term1 = (x - a) / (b - a)
     term2 = (c - x) / (c - b)
     return np.maximum(0, np.minimum(term1, term2))
