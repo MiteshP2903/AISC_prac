@@ -30,8 +30,8 @@ def hill_climbing_tsp(matrix):
     improved = True
     while improved:
         improved = False
-        # Evaluate all 2-opt neighbors
-        for i in range(1, num_cities - 1):
+        # Evaluate 2-opt neighbors starting from i = 0
+        for i in range(0, num_cities - 1):
             for j in range(i + 1, num_cities):
                 neighbor = get_2opt_neighbor(current_tour, i, j)
                 neighbor_distance = calculate_tour_distance(neighbor, matrix)
@@ -41,9 +41,9 @@ def hill_climbing_tsp(matrix):
                     current_tour = neighbor
                     current_distance = neighbor_distance
                     improved = True
-                    break  # First-choice improvement
-        if improved:
-            break
+                    break  # First-choice improvement: break inner loop and restart search
+            if improved:
+                break  # Break outer loop so the while loop restarts from the new state
 
     return current_tour, current_distance
 
