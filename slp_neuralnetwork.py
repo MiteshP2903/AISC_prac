@@ -28,7 +28,7 @@ class Perceptron:
                 break
 
 if __name__ == "__main__":
-    # Corrected input values for the AND gate
+    # Input values for the AND gate
     X = np.array([
         [0, 0],
         [0, 1],
@@ -36,7 +36,7 @@ if __name__ == "__main__":
         [1, 1]
     ])
 
-    # Corrected target output values
+    # Target output values for the AND gate
     y = np.array([0, 0, 0, 1])
 
     perceptron = Perceptron(input_size=2, learning_rate=0.1, epochs=10)
@@ -44,4 +44,4 @@ if __name__ == "__main__":
 
     print("Testing Final Predictions:")
     for test_input in X:
-        print(f"Input: {test_input}->o/p:{perceptron.predict(test_input)}")
+        print(f"Input: {test_input} -> o/p: {perceptron.predict(test_input)}")
